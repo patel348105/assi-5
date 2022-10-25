@@ -1,0 +1,76 @@
+ex:1# Why Django should be used for web-development? Explain how you can create a project in Django?
+ans: Django is a highly powerful framework for building small and large scale web applications. Being a Python-based framework,
+Django for web development is the preferred choice of companies all over the world.If you are looking for proof of Django’s 
+popularity, here it is – Django framework for web development is used by YouTube, Dropbox, Instagram, Pinterest, Google, Reddit,
+and many more. Being an open-source and maintainable web application development framework, companies adore it for building 
+dynamic and sophisticated web applications.
+Now you must be asking yourself “is Django good for web development?” The framework has a lot of benefits over other
+frameworks like Ruby on Rails, Flutter, Xamarin, etc. When you want a robust, scalable and stable application with a large 
+codebase, using Django for web development is the right choice.
+ 
+#How to create a project?
+- For creating a project with Django, open command line
+- Enter the following command
+- django-admin startproject blog
+- The above command will create the project folder with the required files.
+#How to create an application?
+- For creating an application with Django in the project, go to the project folder
+- Run the following command to create application in project
+- py manage.py startapp post
+- The above command will create a post folder with require files in your project folder (blog).
+- Run project in the browser.
+*********************************************************************************************************************************
+ex:2#How to check installed version of django?
+ans:-When you start your server (python manage.py runserver), you will get some output right away.That will also tell you
+on what version you are.
+- Stop the server and then run pip freeze | grep Django (when you are in the virtual environment). 
+- Stop the server (if you haven’t already) and open up shell python manage.py shell and then enter this:
+import django
+django.get_version()
+- Stop the server (if you haven’t already) and then run this:
+python manage.py version.
+**************************************************************************************************************************************
+ex:3#Explain what does django-admin.py make messages command is used for? 
+ans:-jango-admin is Django’s command-line utility for administrative tasks. This document outlines all it can do.
+In addition, manage.py is automatically created in each Django project. It does the same thing as django-admin but also 
+sets the DJANGO_SETTINGS_MODULE environment variable so that it points to your project’s settings.py file.
+The django-admin script should be on your system path if you installed Django via pip. If it’s not in your path, ensure you
+have your virtual environment activated.
+Generally, when working on a single Django project, it’s easier to use manage.py than django-admin. If you need to switch 
+between multiple Django settings files, use django-admin with DJANGO_SETTINGS_MODULE or the --settings command line option.
+The command-line examples throughout this document use django-admin to be consistent, but any example can use manage.py or 
+python -m django just as well.
+****************************************************************************************************************************************
+ex:4#What is Django URLs?make program to create django urls
+ans:-What are Django URLs A URL is a web address. For example, codespeedy.com is also a URL. In Django, we use URLconf,
+which is a set of patterns that Django will try to match the requested URL to find the correct view.
+The path method allows returning of an element to be included in URL patterns tuple which will be used as an url pattern. This was introduced in Django version 2.0 along with the re_path() method.
+
+Syntax: 
+path(route, view, kwargs=None, name=None)
+
+Example
+urls.py:
+from django.contrib import admin
+from django.conf.urls import url,include
+from django.urls import path
+from Django_app1 import views
+admin.autodiscover()
+urlpatterns = [
+path('index/',views.template_view,name='template'),
+url(r'^myapp/', include('Django_app1.urls')),
+url(r'admin/', admin.site.urls),
+]
+********************************************************************************************************************
+ex:5#What is a QuerySet?Write program to create a new Post object in database:
+ans:-A QuerySet is a collection of data from a database. A QuerySet is built up as a list of objects. QuerySets makes it 
+easier to get the data you actually need, by allowing you to filter and order the data.
+
+create table test 
+( 
+  id serial primary key, 
+  name varchar(64), 
+  handler varchar(16), 
+  desc varchar(255) 
+);
+***********************************************************************************************************************
